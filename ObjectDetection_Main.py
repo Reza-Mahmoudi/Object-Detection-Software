@@ -64,7 +64,7 @@ while True:
 
     #object detection
 
-    (class_id,scores,bboxes)= model.detect(frame)
+    (class_id,scores,bboxes)= model.detect(frame ,confThreshold=0.3, nmsThreshold=.4)
     for class_id,scores,bboxes in zip(class_id,scores,bboxes ):
          (x,y,w,h ) = bboxes
         #print(x,y,w, h)
